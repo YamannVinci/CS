@@ -23,7 +23,7 @@ def csMPa():
     return df_sample
 
 dfc = csMPa()
-model = pickle.load(open("model_xg.pkl", "rb"))
+model = pickle.load(open("model_xg", "rb"))
 
 if st.sidebar.button("Submit"):
     result = model.predict(dfc)
