@@ -12,6 +12,7 @@ html_temp = """
 </div><br>"""
 st.markdown(html_temp,unsafe_allow_html=True)
 st.sidebar.title('Enter the Following Parameters')
+del DeltaGenerator
 RH=st.sidebar("Rebound Number", 14, 55.50, step=10)
 UPV=st.sidebar("Ultrasonic Pulse Velocity", 1.82, 5.22, step=10)
 
