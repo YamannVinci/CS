@@ -16,9 +16,9 @@ RH=st.sidebar("Rebound Number", 14, 55.50, step=10)
 UPV=st.sidebar("Ultrasonic Pulse Velocity", 1.82, 5.22, step=10)
 
 def csMPa():
-my_dict = ("RH" : RH,
-          "UPV" : UPV)
-df_sample = pd.DataFrame.from_dict((my_dict))
+my_dict = {"RH" : RH,
+          "UPV" : UPV}
+df_sample = pd.DataFrame.from_dict(my_dict)
 return df_sample
 dfc = csMPa()
 model = pickle.load(open("model_xg", "rb"))
