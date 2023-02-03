@@ -16,15 +16,14 @@ RH=st.sidebar("Rebound Number", 14, 55.50, step=10)
 UPV=st.sidebar("Ultrasonic Pulse Velocity", 1.82, 5.22, step=10)
 
 def csMPa():
-my_dict = {"RH" : RH,
-          "UPV" : UPV}
-df_sample = pd.DataFrame.from_dict(my_dict)
-return df_sample
+    my_dict = {"RH" : RH,
+              "UPV" : UPV}
+    df_sample = pd.DataFrame.from_dict(my_dict)
+    return df_sample
 dfc = csMPa()
 model = pickle.load(open("model_xg", "rb"))
 
 if st.sidebar.button("Submit"):
-  result = (model.predict(dfc))
-  st.success(f"Compressive Strength Prediction of the Concrete is (result) MPa")
-         
+    result = (model.predict(dfc))
+    st.success(f"Compressive Strength Prediction of the Concrete is {result[0]} MPa")
   
